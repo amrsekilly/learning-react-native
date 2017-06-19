@@ -1,20 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Text, View } from 'react-native';
 
-export default class App extends React.Component {
+
+class Greet extends React.Component {
   render() {
-    let img = { uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg' };
-    return (
-      <Image source={img} style={{width: 193, height: 110}}/>
-    );
+    // return the greeting for the username
+    return (<Text>Hello {this.props.username}!!!</Text>);
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'cyan',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+export default class App extends React.Component {
+  render() {
+    // greet many people
+    return(
+      <View>
+        <Greet username="Amr" />
+        <Greet username="Joe" />
+        <Greet username="Judy" />
+      </View>
+    );
+  }
+}
