@@ -28,19 +28,11 @@ export default class App extends React.Component {
   render() {
     // greet many people
     return(
-      <View style={styles.container}>
-        <Timer />
+      <View style={{flex: 1}}>
+        <View style={{flex: 3, backgroundColor: 'skyblue'}} />
+        <Timer style={{flex: 1}} />
+        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
       </View>
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
