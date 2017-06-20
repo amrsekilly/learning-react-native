@@ -1,37 +1,25 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TextInput } from 'react-native';
 
-
-class Timer extends React.Component {
-  // create a constructor to intialize the state
-  constructor() {
-    super();
-    // initialize the time with zero
-    this.state = {time: 0};
-
-    // increment timer by 1 second each second
-    setInterval( () => {
-      this.setState(prevState => {
-        return { time: ++prevState.time  };
-      });
-    }, 1000);
-  }
-
-  render() {
-    // return the greeting for the username
-    let timer = this.state.time;
-    return (<Text>Time: {timer}</Text>);
-  }
-}
 
 export default class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {text: ''};
+  }
   render() {
     // greet many people
     return(
-      <View style={{flex: 1}}>
-        <View style={{flex: 3, backgroundColor: 'skyblue'}} />
-        <Timer style={{flex: 1}} />
-        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
+      <View style={{padding: 10}}>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Type here to translate!"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10, fontSize: 42}}>
+          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
       </View>
     );
   }
