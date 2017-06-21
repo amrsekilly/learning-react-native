@@ -13,6 +13,7 @@ export default class App extends React.Component {
     return(
       <View style={{padding: 100}}>
         <Button
+          color='red'
           onPress={() => { Alert.alert('You tapped the button!')}}
           title="Press Me"
         />
